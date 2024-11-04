@@ -1,0 +1,4 @@
+torch
+numpy
+scikit-learn
+Pillow  # Para cargar y procesar imágenes torch, numpy, scikit-learn, and Pillow are popular libraries used in the field of machine learning and data processing tasks. Torch is a deep learning framework commonly used for building neural networks. Numpy is a powerful library for numerical computations in Python. Scikit-learn is a machine learning library that provides algorithms for tasks such as regression, classification, and clustering. Pillow is a library used for loading and processing images, making it useful for computer vision applications.

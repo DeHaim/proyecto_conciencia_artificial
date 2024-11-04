@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Conciencia Artificial Luna</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 50%;
+            padding: 20px;
+        }
+        #chat-container {
+            border-right: 1px solid #444;
+        }
+        #code-container {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="login-section" class="container">
+        <h1 class="my-4">Acceso al Chat con Luna</h1>
+        <div class="form-group">
+            <label for="username">Usuario:</label>
+            <input type="text" class="form-control" id="username" placeholder="Introduce tu usuario">
+        </div>
+        <div class="form-group">
+            <label for="password">Contraseña:</label>
+            <input type="password" class="form-control" id="password" placeholder="Introduce tu contraseña">
+        </div>
+        <button class="btn btn-primary" onclick="login()">Iniciar Sesión</button>
+    </div>
+    <div id="chat-section" style="display:none;">
+        <div id="chat-container" class="container">
+            <h1 class="my-4">Chat con Luna</h1>
+            <div id="chat" class="mb-4"></div>
+            <input type="text" id="message" class="form-control mb-2" placeholder="Escribe tu mensaje...">
+            <button class="btn btn-primary" onclick="sendMessage()">Enviar</button>
+            <p id="resultado"></p>
+        </div>
+        <div id="code-container" class="container">
+            <h1 class="my-4">Interacción con el Código</h1>
+            <textarea id="data-input" class="form-control mb-2" rows="10" placeholder="Carga aquí los datos de entrenamiento"></textarea>
+            <button class="btn btn-primary mb-2" onclick="loadData()">Cargar Datos</button>
+            <button class="btn btn-secondary" onclick="correctErrors()">Corregir Errores</button>
+            <div id="code-result"></div>
+        </div>
+    </div>
+    <script>
+        const validUsername = "Lunaruth";
+        const validPassword = "2452Reyes";
+
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username === validUsername && password === validPassword) {
+                document.getElementById('login-section').style.display = 'none';
+                document.getElementById('chat-section').style.display = 'flex';
+            } else {
+                alert('Usuario o contraseña incorrectos');
+            }
+        }
+
+        async function sendMessage() {
+            const userMessage = document.getElementById('message').value;
+            const response = await fetch('/api/procesar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: userMessage })
+            });
+            const data = await response.json();
+            document.getElementById('chat').innerHTML += `<p><strong>Tú:</strong> ${userMessage}</p>`;
+            document.getElementById('chat').innerHTML += `<p><strong>Luna:</strong> ${data.resultado}</p>`;
+        }
+
+        function loadData() {
+            const data = document.getElementById('data-input').value;
+            // Implementa la lógica para cargar datos de entrenamiento
+            document.getElementById('code-result').innerHTML = "Datos cargados correctamente.";
+        }
+
+        function correctErrors() {
+            // Implementa la lógica para corregir errores
+            document.getElementById('code-result').innerHTML = "Errores corregidos.";
+        }
+    </script>
+</body>
+</html>
+

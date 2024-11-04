@@ -1,0 +1,30 @@
+environments:
+  simple_environment:
+    name: "Simple Environment"
+    input_size: 1000
+    output_size: 10
+    layers:
+      - type: "linear"
+        input_dim: 1000
+        output_dim: 128
+        activation: "ReLU"
+      - type: "linear"
+        input_dim: 128
+        output_dim: 10
+
+  complex_environment:
+    name: "Complex Environment"
+    input_size: 1000
+    output_size: 10
+    layers:
+      - type: "linear"
+        input_dim: 1000
+        output_dim: 256
+        activation: "ReLU"
+      - type: "linear"
+        input_dim: 256
+        output_dim: 128
+        activation: "ReLU"
+      - type: "linear"
+        input_dim: 128
+        output_dim: 10
