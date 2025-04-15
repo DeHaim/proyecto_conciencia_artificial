@@ -29,7 +29,21 @@ El proyecto Luna tiene como propósito investigar los algoritmos de la concienci
 Instrucciones sobre cómo utilizar el proyecto, incluyendo ejemplos de código.
 
 ## Estructura del Proyecto
-Una breve descripción de la estructura de archivos y carpetas del proyecto.
+### Modules
+* **modules/alter_ego_simulator.py**: Simulates an alter ego with distinct personality traits.
+* **modules/code_suggester.py**: Suggests code snippets and completions based on context.
+* **modules/dream_augment.py**: Enhances and manipulates dream content.
+* **modules/dream_mechanism.py**: Models the mechanisms of dream generation.
+* **modules/emotion_decomposer.py**: Analyzes and breaks down emotional states.
+* **modules/existential_analyzer.py**: Explores and analyzes existential questions and concepts.
+* **modules/ganslstm_core.py**: Core implementation of a GAN and LSTM hybrid model.
+* **modules/innovation_engine.py**: Drives creative and innovative idea generation.
+* **modules/introspection_engine.py**: Facilitates self-reflection and introspection.
+* **modules/memory_discriminator.py**: Distinguishes between different types of memories.
+* **modules/personality_x_infants_experiences.py**: Handles personality data related to infant experiences.
+* **modules/philosophical_core.py**: Implements core philosophical principles and reasoning.
+* **modules/self_mirror.py**: Creates a reflection or representation of the self.
+* **modules/tool_optimizer.py**: Optimizes the use and selection of tools.
 
 ## Contribuciones
 Indicaciones sobre cómo otros pueden contribuir al proyecto.

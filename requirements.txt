@@ -1,0 +1,40 @@
+# Requisitos para Ruth R1
+
+## Núcleo de machine learning
+torch
+torchvision
+torchaudio
+numpy
+pandas
+scikit-learn
+
+## Procesamiento de voz (opcional si se usa en Flask backend)
+#  speechrecognition  # Requiere pyaudio, puede ser problemático de instalar.  Considerar  alternativas como  assemblyai-python si se usa un servicio en la nube.
+#  pyaudio #  Dependencia para speechrecognition, a menudo requiere instalación específica del sistema operativo.
+#  transformers  # Si se usa un modelo de voz de Hugging Face
+
+## Backend y servidor (si aplica)
+flask
+#  fastapi #  Alternativa a Flask, si se prefiere.
+#  uvicorn #  Servidor ASGI para FastAPI.
+
+## Utilidades comunes
+requests
+python-dotenv  # Para cargar variables de entorno desde un archivo .env
+tqdm  # Para barras de progreso
+#  beautifulsoup4 #  Si se hace web scraping
+#  lxml #  Parser para BeautifulSoup
+
+## Seguridad de archivos cifrados (en Ruth: simulada por firma hash, opcionalmente usar):
+#  cryptography # Para cifrado real.  Alternativamente, para la simulación de firma hash:
+#  hashlib  #  Ya está en la biblioteca estándar de Python, no necesita instalarse.
+
+## (Opcional para visor web si se integra visualización gestual)
+#  opencv-python # Si se procesan videos o imágenes para gestos.
+#  mediapipe # Para el seguimiento de gestos.
+
+
+#  --- Notas ---
+#  *  Los comentarios con '#'  indican dependencias opcionales o alternativas.  Descomenta e instala solo lo que necesites.
+#  *  Algunas bibliotecas (como  pyaudio) pueden requerir pasos de instalación adicionales específicos del sistema operativo.  Consulta su documentación.
+#  *  Para instalar, usa:  `pip install -r requirements.txt`
